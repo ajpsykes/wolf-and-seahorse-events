@@ -1,0 +1,2445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wolf & Seahorse — What’s On in Belfast</title>
+  <meta name="description" content="What’s on in Belfast this week.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* ── BRAND IDENTITY ─────────────────────────────────── */
+      --accent:           #3BA899;
+      --accent-hover:     #278A7C;
+      --accent-light:     #9CD4CC;
+
+      /* ── INK & GROUND ───────────────────────────────────── */
+      --dark:             #3A1542;
+      --base:             #F5F8F7;
+
+      /* ── FULL TEXT SCALE ─────────────────────────────────── */
+      --body-text:        #2A0832;
+      --body-muted:       #4A2858;
+      --body-subtle:      #7A6888;
+      --divider:          rgba(58,21,66,0.10);
+
+      /* ── NEUTRAL ─────────────────────────────────────────── */
+      --neutral:          #5A6870;
+
+      /* ── CARD SURFACES ───────────────────────────────────── */
+      --card-bg:          #FAFCFB;
+      --card-tint:        #EAF5F3;
+      --card-border:      rgba(30,30,30,0.07);
+
+      /* ── ACCENT TINT SCALE ───────────────────────────────── */
+      --tint-strong:      #74C4BC;
+      --tint-mid:         #9CD8D2;
+      --tint-soft:        #C4EAE6;
+
+      /* ── FOOTER ─────────────────────────────────────────── */
+      --footer-bg:        #260A30;
+      --footer-text:      #B0C8C4;
+      --footer-muted:     #586070;
+
+      /* ── TYPOGRAPHY ─────────────────────────────────────── */
+      --font-display: 'Clash Display', system-ui, sans-serif;
+      --font: 'DM Sans', system-ui, sans-serif;
+
+      /* ── RADII & SHADOWS ─────────────────────────────────── */
+      --r-sm: 8px; --r-md: 12px; --r-lg: 16px;
+      --sh-sm: 0 2px 10px rgba(0,0,0,0.06);
+      --sh-md: 0 6px 24px rgba(0,0,0,0.12);
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font); background: var(--base); color: var(--dark); -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    .hero-title, .hero-kicker, h1, h2, .section-heading { font-family: var(--font-display); }
+    .hero { position: relative; min-height: 500px; display: flex; flex-direction: column; justify-content: flex-end; overflow: hidden; background: url('hero.jpg') center 40% / cover no-repeat; }
+    .hero-overlay { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(8,6,4,0.10) 0%, rgba(8,6,4,0.30) 35%, rgba(8,6,4,0.76) 100%); }
+    .hero-inner { position: relative; z-index: 2; max-width: 860px; margin: 0 auto; width: 100%; padding: 48px 32px 60px; }
+    .hero-tag { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.12); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.18); color: #fff; font-size: 11px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; padding: 6px 14px; border-radius: 100px; margin-bottom: 22px; }
+    .hero-dot { width: 5px; height: 5px; background: #F8D4C0; border-radius: 50%; animation: pulse 2.2s ease-in-out infinite; }
+    @keyframes pulse { 0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.4;transform:scale(0.75);} }
+    .hero-title { font-size: clamp(52px, 10vw, 88px); font-weight: 800; letter-spacing: -1.5px; text-transform: uppercase; color: #fff; line-height: 0.92; margin-bottom: 22px; }
+    .hero-title span { display: block; color: rgba(255,255,255,0.75); font-size: 0.52em; font-weight: 400; letter-spacing: 0; text-transform: none; line-height: 1.5; margin-top: 14px; }
+    .hero-actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; background: #fff; color: var(--dark); font-family: var(--font); font-size: 14px; font-weight: 700; text-decoration: none; padding: 13px 22px; border-radius: var(--r-sm); transition: background 0.15s, transform 0.1s; white-space: nowrap; }
+    .btn-primary:hover { background: var(--accent-light); transform: translateY(-1px); }
+    .btn-ghost { display: inline-flex; align-items: center; gap: 6px; color: rgba(255,255,255,0.82); font-size: 14px; font-weight: 500; text-decoration: none; border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 2px; transition: color 0.15s, border-color 0.15s; }
+    .btn-ghost:hover { color: #fff; border-color: #fff; }
+    .count-strip { background: var(--dark); padding: 16px 32px; }
+    .count-inner { max-width: 860px; margin: 0 auto; display: flex; align-items: center; justify-content: center; gap: 20px; flex-wrap: nowrap; }
+    .count-item { display: flex; align-items: baseline; gap: 7px; }
+    .count-item strong { font-size: 20px; font-weight: 800; color: var(--accent); }
+    .count-item span { font-size: 12px; color: rgba(255,255,255,0.45); }
+    .count-sep { width: 1px; height: 20px; background: rgba(255,255,255,0.10); flex-shrink: 0; }
+    .main { max-width: 860px; margin: 0 auto; padding: 56px 32px 80px; }
+    .cat-section { margin-bottom: 56px; animation: fadeUp 0.45s ease both; }
+    @keyframes fadeUp { from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);} }
+    .cat-section:nth-child(1){animation-delay:0.05s;} .cat-section:nth-child(2){animation-delay:0.10s;} .cat-section:nth-child(3){animation-delay:0.15s;} .cat-section:nth-child(4){animation-delay:0.20s;} .cat-section:nth-child(5){animation-delay:0.25s;} .cat-section:nth-child(6){animation-delay:0.30s;}
+    .cat-strip { background: linear-gradient(105deg, var(--dark) 0%, var(--accent) 100%); border-radius: var(--r-lg) var(--r-lg) 0 0; padding: 22px 24px; display: flex; align-items: center; justify-content: space-between; }
+    .cat-strip-left { display: flex; align-items: center; gap: 12px; }
+    .cat-bar { width: 3px; height: 26px; background: rgba(255,255,255,0.7); border-radius: 2px; flex-shrink: 0; }
+    .cat-name { font-size: 17px; font-weight: 800; text-transform: uppercase; letter-spacing: -0.2px; color: #fff; }
+    .cat-count { font-size: 11px; font-weight: 700; color: #fff; background: rgba(0,0,0,0.35); padding: 3px 10px; border-radius: 100px; border: 1px solid rgba(255,255,255,0.15); }
+    .cat-cards { border: 1px solid var(--card-border); border-top: none; border-radius: 0 0 var(--r-lg) var(--r-lg); overflow: hidden; }
+    .event-card { display: grid; grid-template-columns: 1fr auto; gap: 10px 18px; align-items: center; background: var(--card-bg); padding: 18px 22px; text-decoration: none; color: inherit; border-bottom: 1px solid var(--card-border); position: relative; transition: background 0.15s; }
+    .event-card:last-child { border-bottom: none; }
+    .event-card::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px; background: var(--accent); opacity: 0; transition: opacity 0.15s; }
+    .event-card:hover { background: #F0F0F0; }
+    .event-card:hover::before { opacity: 1; }
+    .event-card.tint { background: var(--card-tint); }
+    .event-card.tint:hover { background: #E8E8E8; }
+    .event-main { min-width: 0; }
+    .event-title { font-size: 15px; font-weight: 600; color: var(--dark); line-height: 1.3; margin-bottom: 7px; }
+    .event-meta { display: flex; flex-wrap: wrap; gap: 5px 14px; }
+    .meta-chip { display: flex; align-items: center; gap: 5px; font-size: 13px; color: var(--neutral); }
+    .meta-chip svg { opacity: 0.6; flex-shrink: 0; }
+    .event-actions { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; flex-shrink: 0; }
+    .badge-price { font-size: 12px; font-weight: 600; color: var(--neutral); background: transparent; border: 1.5px solid rgba(155,147,134,0.5); padding: 2px 9px; border-radius: 100px; white-space: nowrap; }
+    .badge-free { font-size: 12px; font-weight: 700; color: #1A6634; background: transparent; border: 1.5px solid #1A6634; padding: 2px 9px; border-radius: 100px; white-space: nowrap; }
+    .badge-plain { font-size: 12px; font-weight: 600; color: var(--neutral); background: transparent; border: 1.5px solid rgba(155,147,134,0.5); padding: 2px 9px; border-radius: 100px; white-space: nowrap; }
+    .more-link { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 600; color: var(--dark); text-decoration: none; white-space: nowrap; transition: gap 0.15s; opacity: 0.6; }
+    .more-link:hover { gap: 7px; }
+    .site-footer { background: var(--footer-bg); position: relative; overflow: hidden; }
+    .site-footer::before { content: ''; position: absolute; top: -120px; left: -100px; width: 480px; height: 480px; background: radial-gradient(circle, rgba(59,168,153,0.10) 0%, transparent 65%); pointer-events: none; }
+    .site-footer::after { content: ''; position: absolute; bottom: -80px; right: -80px; width: 300px; height: 300px; background: radial-gradient(circle, rgba(59,168,153,0.06) 0%, transparent 65%); pointer-events: none; }
+    .footer-inner { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; padding: 64px 32px 40px; }
+    .footer-top { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.07); margin-bottom: 28px; }
+    .footer-brand { font-size: 36px; font-weight: 800; text-transform: uppercase; letter-spacing: -0.5px; color: #fff; line-height: 0.95; margin-bottom: 14px; }
+    .footer-tagline { font-size: 14px; color: var(--footer-text); line-height: 1.65; max-width: 250px; margin-bottom: 26px; }
+    .footer-btn { display: inline-flex; align-items: center; gap: 8px; background: var(--accent-light); color: var(--dark); font-size: 14px; font-weight: 700; text-decoration: none; padding: 12px 22px; border-radius: var(--r-sm); transition: background 0.15s, color 0.15s, transform 0.1s; }
+    .footer-btn:hover { background: var(--accent); color: #fff; transform: translateY(-1px); }
+    .footer-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-content: start; }
+    .stat-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: var(--r-md); padding: 18px 16px; }
+    .stat-num { font-size: 30px; font-weight: 800; color: var(--accent); line-height: 1; margin-bottom: 5px; }
+    .stat-label { font-size: 12px; color: var(--footer-text); }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    .footer-copy { font-size: 12px; color: var(--footer-muted); }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-size: 12px; color: var(--footer-muted); text-decoration: none; transition: color 0.15s; }
+    .footer-links a:hover { color: var(--footer-text); }
+    @media (max-width: 600px) { .hero-inner { padding: 28px 20px 44px; } .hero-title { font-size: 48px; } .main { padding: 40px 20px 60px; } .event-card { grid-template-columns: 1fr; } .event-actions { flex-direction: row; justify-content: space-between; align-items: center; } .footer-top { grid-template-columns: 1fr; gap: 32px; } .footer-inner { padding: 48px 20px 32px; } .count-strip { padding: 12px 16px; } .count-inner { gap: 12px; } .count-item strong { font-size: 16px; } .count-item span { font-size: 10px; } .count-sep { height: 16px; } }
+  </style>
+</head>
+<body>
+<section class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-inner">
+    <div class="hero-tag"><span class="hero-dot"></span>Belfast  ·  Updated weekly</div>
+    <h1 class="hero-title">Wolf &<br>Seahorse<span>What's On &nbsp;·&nbsp; 1 Jun – 7 Jun 2026</span></h1>
+    <div class="hero-actions">
+      <a href="https://www.wolfandseahorse.com" class="btn-primary"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Subscribe — it's free</a>
+      <a href="https://www.wolfandseahorse.com/archive" class="btn-ghost">Read the newsletter<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    </div>
+  </div>
+</section>
+<div class="count-strip">
+  <div class="count-inner">
+    <div class="count-item"><strong style="font-size:28px">111</strong><span style="font-size:16px">events this week</span></div>
+  </div>
+</div>
+<main class="main">
+<div class="cat-section">
+  <div class="cat-strip">
+    <div class="cat-strip-left">
+      <div class="cat-bar"></div>
+      <span class="cat-name">Live Music</span>
+    </div>
+    <span class="cat-count">58 events</span>
+  </div>
+  <div class="cat-cards">
+    <a href="https://www.ticketmaster.ie/an-evening-with-jason-isbell-and-belfast-02-06-2026/event/380063798866173A" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">An Evening with Jason Isbell and the 400 Unit</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Tue 2 Jun, 19:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Ulster Hall Belfast
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.blackboxbelfast.com/event/black-moon-48/" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Black Moon</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Tue 2 Jun, 19:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          The Black Box
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.ticketmaster.ie/an-evening-with-jason-isbell-and-the-400-unit-belfast-02-06-2026/event/380063798866173A" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Jason Isbell and the 400 Unit</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Tue 2 Jun, 20:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Ulster Hall
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://entertainment.ie/events/listing/all/antrim/" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Jason Isbell And The 400 Unit</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Tue 2 Jun, 20:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Ulster Hall
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.ticketmaster.ie/an-evening-with-jason-isbell-and-the-400-unit-belfast-02-06-2026/event/380063798866173A" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Jason Isbell and the 400 Unit</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Tue 2 Jun, 19:30
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Ulster Hall
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.waterfront.co.uk/what-s-on/k-pop-all-stars-2/" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">K-POP ALL STARS</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Tue 2 Jun, 19:30
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Waterfront Hall
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.eventbrite.ie/e/twistd-presents-aeroshannen-blessing-laverys-belfast-tickets-1977033463309" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Skinty</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Tue 2 Jun, 20:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Lavery's
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.ticketmaster.ie/an-evening-with-jason-isbell-and-the-400-unit-belfast-02-06-2026/event/380063798866173A" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Ulster Hall Music</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Tue 2 Jun, TBD
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Ulster Hall
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.waterfront.co.uk/what-s-on/celtic-heart-experience-june/" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Celtic Heart</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Wed 3 Jun, 20:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Waterfront Studio
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.ticketmaster.ie/girl-in-the-year-above-belfast-03-06-2026/event/38006458D12220B4" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Girl In The Year Above</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Wed 3 Jun, 19:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Voodoo
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.blackboxbelfast.com/event/the-first-slip-48/" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">The First Slip</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Wed 3 Jun, 17:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Green Room
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://whatsontonight.ie/event_31372" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">UFO</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Wed 3 Jun, 22:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Limelight, Ormeau, Belfast
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.ticketmaster.ie/amanda-shires-streetlights-and-stars-european-tour-belfast-04-06-2026/event/3800644CB83724EF" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Amanda Shires</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Thu 4 Jun, 19:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Limelight 2
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.ticketmaster.ie/amanda-shires-streetlights-and-stars-european-tour-belfast-04-06-2026/event/3800644CB83724EF" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Amanda Shires</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Thu 4 Jun, 19:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Limelight, Ormeau, Belfast
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.ticketmaster.ie/amanda-shires-streetlights-and-stars-european-belfast-04-06-2026/event/3800644CB83724EF" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Amanda Shires: Streetlights and Stars European Tour</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Thu 4 Jun, 19:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          The Limelight 2
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://whatsontonight.ie/event/31312/babba/" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Babba</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Thu 4 Jun, 22:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Limelight, Ormeau, Belfast
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.glistrr.com/events/e/babba-thu-4-june-2976-749" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">BABBA Every Thursday Night</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Thu 4 Jun, 22:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Limelight
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.theduncairn.com/events/Chris-brain" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Chris Brain</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Thu 4 Jun, 20:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Duncairn Avenue, Belfast, Co Antrim BT14 6BP
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.qub.ac.uk/research-centres/sarc/events/HandmadeMusic35.html" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Handmade Music</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Thu 4 Jun, 19:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Accidental Theatre, Belfast
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.blackboxbelfast.com/event/cqaf-presents-teddy-thompson-never-be-the-same-tour/" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Teddy Thompson: Never Be The Same Tour</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Thu 4 Jun, 20:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          The Black Box
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.blackboxbelfast.com/event/cqaf-presents-teddy-thompson-never-be-the-same-tour/" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Teddy Thompson: Never Be The Same Tour</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Thu 4 Jun, 20:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          The Black Box, Belfast Centre
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.ulsterhall.co.uk/what-s-on/the-bjorn-identity-26/" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">The Bjorn Identity</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Thu 4 Jun, 20:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Ulster Hall
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.ticketmaster.ie/curepedia-the-story-of-the-cure-spellbound-dj-set-belfast-05-06-2026/event/38006459EDC92D01" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Curepedia - The Story of The Cure</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Fri 5 Jun, 20:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          The Belfast Empire Music Hall, 42 Botanic Avenue, Belfast, BT7 1JQ
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.ticketmaster.ie/curepedia-the-story-of-the-cure-belfast-05-06-2026/event/38006459EDC92D01" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Curepedia: the Story of the Cure &amp; Spellbound DJ Set</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Fri 5 Jun, 20:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Empire Music Hall
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.ticketsource.com/classical/vivaldis-four-seasons-lark-ascending-by-candlelight-5th-june-belfast-cathedral/e-yjelrq" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Four Seasons &amp; The Lark Ascending by Candlelight</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Fri 5 Jun, TBD
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Belfast Cathedral (St Anne's)
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.ticketmaster.ie/halina-rice-belfast-05-06-2026/event/3800636C7AFC1276" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Halina Rice</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Fri 5 Jun, 19:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Mandela Hall
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.eventbrite.ie/e/just-one-direction-club-night-5th-june-oh-yeah-music-centre-belfast-tickets-1989537608544" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Just One Direction: Club Night</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Fri 5 Jun, —
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Oh Yeah Music Centre
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.ticketmaster.ie/pete-snodden-most-loved-belfast-05-06-2026/event/380064697EFC0A64" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Pete Snodden Most Loved</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Fri 5 Jun, 20:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Limelight 2
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.eventbrite.co.uk/e/red-eye-pariah-antwan-ruiz-orchid-house-at-the-deers-head-belfast-5626-tickets-1985471976128" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">RED EYE PARIAH / ANTWAN RUIZ</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Fri 5 Jun, 19:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          The Deer's Head, 1-3 Lower Garfield St, Belfast BT1 1FP
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://laverys.com/event/resident-djs-phil-lucas-2/2026-06-05/" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Resident DJs - Phil Lucas</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Fri 5 Jun, 21:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Lavery's
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.mandelahall.com/events/richard-thompson" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Richard Thompson</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Fri 5 Jun, 00:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Mandela Hall, Belfast
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.ticketmaster.ie/curepedia-spellbound-dj-set-belfast-05-06-2026/event/38006459EDCB2D03" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Simon Price - Spellbound DJ Set</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Fri 5 Jun, 22:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          The Belfast Empire Music Hall, 42 Botanic Avenue, Belfast, BT7 1JQ
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://entertainment.ie/events/listing/all/antrim/" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">The Story of The Cure</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Fri 5 Jun, 19:30
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Empire Music Hall
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.jazzireland.ie/jazz-events/gig/scotts-jazz-club-presents-tommy-halferty-quartet.html" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Tommy Halferty Quartet</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Fri 5 Jun, 21:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Scott's Jazz Club, Ballyhackamore Working Mens Club, 1 Sandown Road, Belfast, BT5 6GT
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.eventbrite.co.uk/e/africa-day-celebration-tickets-1986710069298" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Africa Day Celebration</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Sat 6 Jun, 12:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Belfast City Hall, Belfast
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.creativetoursbelfast.com/belfastmusicwalkingtour" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Belfast Music Walking Tour + performance</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Sat 6 Jun, —
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Ulster Hall
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.ticketmaster.ie/lewes-music-group-carole-king-s-tapestry-belfast-07-06-2026/event/38006465E8971DEF" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Carole King's Tapestry</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Sat 6 Jun, 20:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Belfast Empire Music Hall
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.eventbrite.com/e/denim-n-leather-rock-club-belfast-tickets-1988767298526" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">DENIM &amp; LEATHER ROCK CLUB</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Sat 6 Jun, 19:30
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          The Deer's Head, 1-3 Lower Garfield St, Belfast BT1 1FP
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.ohyeahbelfast.com/events/dufair" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Dufair</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Sat 6 Jun, —
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Oh Yeah Music Centre
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.ohyeahbelfast.com/events/dufair" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Dufair: Jungle Club Night</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Sat 6 Jun, 20:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Oh Yeah Music Centre
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.thedeersheadbelfast.com/whats-on/guinness-blues-cafe-the-davy-k-project/" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">GUINNESS BLUES CAFE - THE DAVY K PROJECT</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Sat 6 Jun, 14:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          The Deer's Head, 1-3 Lower Garfield St, Belfast BT1 1FP
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.ticketmaster.ie/halina-rice-belfast-05-06-2026/event/3800636C7AFC1276" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Halina Rice Immersive Live set &amp; AV</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Sat 6 Jun, 00:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Mandela Hall, Belfast
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.eventbrite.ie/e/harvest-a-tribute-to-neil-young-live-at-mandela-hall-belfast-06062026-tickets-1975825779093" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Harvest</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Sat 6 Jun, 19:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Mandela Hall, Lisburn Road, Belfast
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.eventbrite.ie/e/harvest-a-tribute-to-neil-young-live-at-mandela-hall-belfast-06062026-tickets-1975825779093" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Harvest (Neil Young Tribute)</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Sat 6 Jun, 19:30
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Mandela Hall
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.ticketmaster.ie/raised-on-rock-belfast-06-06-2026/event/3800642ECBDB1E58" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Raised on Rock</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Sat 6 Jun, 19:30
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          The Belfast Empire Music Hall, 42 Botanic Avenue, Belfast, BT7 1JQ
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.ticketmaster.ie/raised-on-rock-belfast-06-06-2026/event/3800642ECBDB1E58" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Raised On Rock</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Sat 6 Jun, 19:30
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Empire Music Hall
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://laverys.com/event/resident-djs-scott-lowry-3/2026-06-06/" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Resident DJs: Scott Lowry</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Sat 6 Jun, 21:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Lavery's
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://errigle.com/events/" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Ryan Bennett | Saturday Night Live</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Sat 6 Jun, 22:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          The Errigle Inn, 312-320, Ormeau Rd, Belfast, County Antrim BT7 2GE
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.ticketmaster.ie/30-club-festival-belfast-20-06-2026/event/38006378C6252108" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">The 30+ Club</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Sat 6 Jun, 17:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Limelight
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.ticketmaster.ie/lewes-music-group-carole-king-s-tapestry-belfast-07-06-2026/event/38006465E8971DEF" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Carole King's Tapestry</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Sun 7 Jun, 19:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          The Belfast Empire Music Hall, 42 Botanic Avenue, Belfast, BT7 1JQ
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.universe.com/events/k-pop-dance-party-tickets-93WV5N?ref=ticketmaster" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">K-POP: Dance Party 🔥</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Sun 7 Jun, 12:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          The Balmoral Hotel
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.ticketmaster.ie/lewes-music-group-carole-kings-tapestry-belfast-07-06-2026/event/38006465E8971DEF" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Lewes Music Group - Carole King's Tapestry</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Sun 7 Jun, 19:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Empire Music Hall
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.ticketmaster.ie/mary-black-tickets/artist/734567" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Mary Black</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Sun 7 Jun, 19:30
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Ulster Hall
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.ulsterhall.co.uk/what-s-on/mary-black-the-sl%C3%A1n-tour-2/" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Mary Black - The Slán Tour</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Sun 7 Jun, Evening (typically 19:00–20:00)
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Ulster Hall
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.ticketmaster.ie/eric-bibb-belfast-08-06-2026/event/38006446E252366B" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Eric Bibb</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Mon 8 Jun, 19:30
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          The Belfast Empire Music Hall, 42 Botanic Avenue, Belfast, BT7 1JQ
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.ticketmaster.ie/eric-bibb-belfast-08-06-2026/event/38006446E252366B" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Eric Bibb</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Mon 8 Jun, 19:30
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Empire Music Hall
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://entertainment.ie/events/listing/all/antrim/" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Kingfishr</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Mon 8 Jun, 20:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          The SSE Arena
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.ulsterhall.co.uk/what-s-on/teenage-kicks-2/" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Teenage Kicks</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Mon 8 Jun, 19:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Ulster Hall
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+  </div>
+</div>
+<div class="cat-section">
+  <div class="cat-strip">
+    <div class="cat-strip-left">
+      <div class="cat-bar"></div>
+      <span class="cat-name">Arts &amp; Culture</span>
+    </div>
+    <span class="cat-count">39 events</span>
+  </div>
+  <div class="cat-cards">
+    <a href="https://www.celticmediafestival.co.uk/belfast-2026" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Belfast Media Festival</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Tue 2 Jun
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          The MAC, 2 Royal Avenue
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.celticmediafestival.co.uk/belfast-2026" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Belfast Media Festival</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Tue 2 Jun, N/A
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          The MAC
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://entertainment.ie/events/listing/all/antrim/" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Sharon Kelly - Disposal of Fullness</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Tue 2 Jun, 10:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Golden Thread Gallery
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.empirelaughsback.com/" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">The Empire Laughs Back Comedy Club</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Tue 2 Jun, 19:30
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          The Belfast Empire Music Hall, 42 Botanic Avenue, Belfast, BT7 1JQ
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://entertainment.ie/events/listing/all/antrim/" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Traces of A Traumatic Future - Frédéric Huska</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Tue 2 Jun, 10:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Golden Thread Gallery
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.waterfront.co.uk/what-s-on/celtic-heart-experience-june/" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Celtic Heart Experience</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Wed 3 Jun, 19:30
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Waterfront Hall Studio
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.glistrr.com/events/e/belfast-stand-up-comedy-gong-show-award-winning-3497-418" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Craic the Gong – Belfast Stand-Up Comedy</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Wed 3 Jun, 19:30
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          The Spaniard, Belfast BT1 2D
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.theduncairn.com/events/improvers-crochet2026" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Improvers Crochet with Aroona Murphy</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Wed 3 Jun, 00:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Duncairn Avenue, Belfast, Co Antrim BT14 6BP
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.theduncairn.com/events/improvers-sewing2026" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Improvers Sewing with Bernie Carlin</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Wed 3 Jun, 00:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Duncairn Avenue, Belfast, Co Antrim BT14 6BP
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.theduncairn.com/events/oilpainting2026" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Introduction to Oil Painting with Hannah O'Hagan</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Wed 3 Jun, 00:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Duncairn Avenue, Belfast, Co Antrim BT14 6BP
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://laverys.com/event/laverys-comedy-club-4-2/2026-06-03/" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Lavery's Comedy Club</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Wed 3 Jun, 20:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Lavery's
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://entertainment.ie/events/listing/all/antrim/" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Sharon Kelly - Disposal of Fullness</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Wed 3 Jun, 10:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Golden Thread Gallery
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://entertainment.ie/events/listing/all/antrim/" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Traces of A Traumatic Future - Frédéric Huska</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Wed 3 Jun, 10:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Golden Thread Gallery
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.belfastphotofestival.com/" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Belfast Photo Festival 2026</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Thu 4 Jun, 00:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          multiple venues
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.skiddle.com/whats-on/Belfast/Ulster-Sports-Club/Late-Night-Art-Takeover-w-Makeshift-Art-Bar--Watters/42428897/" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Late Night Art Takeover w/ Makeshift Art Bar</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Thu 4 Jun, 21:30
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Ulster Sports Club
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://laverys.com/event/laverys-comedy-club-4-2/2026-06-04/" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Lavery's Comedy Club</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Thu 4 Jun, 20:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Lavery's
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.ticketmaster.ie/share-a-suite-peter-kay-belfast-04-06-2026/event/3800636DBF341ED1" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Share a Suite - Peter Kay</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Thu 4 Jun, 18:30
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          The SSE Arena, Belfast
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://entertainment.ie/events/listing/all/antrim/" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Sharon Kelly - Disposal of Fullness</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Thu 4 Jun, 10:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Golden Thread Gallery
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.blackboxbelfast.com/event/the-green-room-exhibitions-cathy-scullion/" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">The Green Room Exhibitions - Cathy Scullion</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Thu 4 Jun, 18:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          The Green Room
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://entertainment.ie/events/listing/all/antrim/" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Traces of A Traumatic Future - Frédéric Huska</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Thu 4 Jun, 10:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Golden Thread Gallery
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://accidentaltheatre.co.uk/whats-on" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">A Partridge in a Poetry!</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Fri 5 Jun, 19:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Accidental Theatre, Belfast
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://accidentaltheatre.co.uk/whats-on" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Accidental Comedy Club</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Fri 5 Jun, 20:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Accidental Theatre, Belfast
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://queensfilmtheatre.com/Whats-On/Northern-Soul-Still-Burning" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Northern Soul: Still Burning</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Fri 5 Jun, 00:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Queen’s Film Theatre
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.ticketmaster.ie/pete-snodden-most-loved-belfast-05-06-2026/event/380064697EFC0A64" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Pete Snodden - Most Loved</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Fri 5 Jun, 20:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          The Limelight 2
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://entertainment.ie/events/listing/all/antrim/" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Peter Kay</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Fri 5 Jun, 20:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          The SSE Arena
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://entertainment.ie/events/listing/all/antrim/" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Sharon Kelly - Disposal of Fullness</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Fri 5 Jun, 10:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Golden Thread Gallery
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.universe.com/events/sibling-rivalry-the-sequel-tickets-1C2LYH?ref=ticketmaster" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Sibling Rivalry: The Sequel</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Fri 5 Jun, 19:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          The Balmoral Hotel
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://entertainment.ie/events/listing/all/antrim/" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Traces of A Traumatic Future - Frédéric Huska</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Fri 5 Jun, 10:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Golden Thread Gallery
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.ohyeahbelfast.com/events/2bxdhjxwpalje3faxr24tczcj9xfk7" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Belfast Music Walking Tour + performance</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Sat 6 Jun, 13:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Ulster Hall
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://entertainment.ie/events/listing/all/antrim/" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Peter Kay</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Sat 6 Jun, 20:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          The SSE Arena
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://entertainment.ie/events/listing/all/antrim/" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Sharon Kelly - Disposal of Fullness</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Sat 6 Jun, 10:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Golden Thread Gallery
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://entertainment.ie/events/listing/all/antrim/" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Traces of A Traumatic Future - Frédéric Huska</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Sat 6 Jun, 10:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Golden Thread Gallery
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.glistrr.com/events/e/belfast-stand-up-comedy-gong-show-award-winning-3497-418" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Craic the Gong – Belfast Stand-Up Comedy</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Sun 7 Jun, 19:30
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          The Spaniard, Belfast BT1 2D
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://entertainment.ie/events/listing/all/antrim/" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Sharon Kelly - Disposal of Fullness</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Sun 7 Jun, 10:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Golden Thread Gallery
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://entertainment.ie/events/listing/all/antrim/" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Traces of A Traumatic Future - Frédéric Huska</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Sun 7 Jun, 10:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Golden Thread Gallery
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.belfastcity.gov.uk/BelfastLearningFestival" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Belfast Learning Festival</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Mon 8 Jun
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Various venues
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.blackboxbelfast.com/event/palestine-comedy-club-screening-and-qa/" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Palestine Comedy Club: Screening and Q&amp;A</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Mon 8 Jun, 19:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          The Black Box
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://entertainment.ie/events/listing/all/antrim/" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Sharon Kelly - Disposal of Fullness</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Mon 8 Jun, 10:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Golden Thread Gallery
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://entertainment.ie/events/listing/all/antrim/" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Traces of A Traumatic Future - Frédéric Huska</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Mon 8 Jun, 10:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Golden Thread Gallery
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+  </div>
+</div>
+<div class="cat-section">
+  <div class="cat-strip">
+    <div class="cat-strip-left">
+      <div class="cat-bar"></div>
+      <span class="cat-name">Other</span>
+    </div>
+    <span class="cat-count">5 events</span>
+  </div>
+  <div class="cat-cards">
+    <a href="https://www.belfastcity.gov.uk/Events/Fix-IT-surgery" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Fix IT surgery</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Tue 2 Jun, 11:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          2 Royal Avenue
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.ticketmaster.ie/the-devenish-complex-tickets-belfast/venue/461509" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Quiz Night</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Wed 3 Jun, 21:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          The Devenish Complex, Belfast Centre
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.meetup.com/find/?location=gb--r3--Belfast" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Why Your Safest Decisions Are the Most Expensive Ones</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Wed 3 Jun, 18:30
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Online
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.meetup.com/find/?location=gb--r3--Belfast" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Belfast Design Meetup</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Thu 4 Jun, 17:30
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Belfast
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://tickets.the30plus.club/checkout/view-event/id/7561685/chk/9c6d/?modal_widget=true&amp;widget=true" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">The 30+ Club</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Sat 6 Jun, 17:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Limelight, Ormeau, Belfast
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+  </div>
+</div>
+<div class="cat-section">
+  <div class="cat-strip">
+    <div class="cat-strip-left">
+      <div class="cat-bar"></div>
+      <span class="cat-name">Family Friendly</span>
+    </div>
+    <span class="cat-count">5 events</span>
+  </div>
+  <div class="cat-cards">
+    <a href="https://discovernorthernireland.com/destinations/belfast/whats-on" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Cultra Motorsport Festival</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Sat 6 Jun, 00:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Cultra Manor
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.ulstertransportmuseum.org/whats-on/cultra-motorsport-festival" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Cultra Motorsport Festival</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Sat 6 Jun, TBD
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Cultra Manor
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.ulstertransportmuseum.org/whats-on/cultra-motorsport-festival" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Cultra Motorsport Festival (incl. Hillclimb)</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Sat 6 Jun, 09:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Ulster Transport Museum / Cultra Manor
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://themaclive.com/event/irish-video-game-orchestra-start-quest" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Irish Video Game Orchestra: Start Quest</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Sat 6 Jun, 14:30
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          The MAC
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.theduncairn.com/events/super-sunday-june-2026" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">SUPER SUNDAY</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Sun 7 Jun, 15:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Duncairn Avenue, Belfast, Co Antrim BT14 6BP
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+  </div>
+</div>
+<div class="cat-section">
+  <div class="cat-strip">
+    <div class="cat-strip-left">
+      <div class="cat-bar"></div>
+      <span class="cat-name">Food &amp; Drink</span>
+    </div>
+    <span class="cat-count">4 events</span>
+  </div>
+  <div class="cat-cards">
+    <a href="https://www.thedeersheadbelfast.com/whats-on/whiskey-club-glenmorangie-ardbeg/" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">WHISKEY CLUB: GLENMORANGIE &amp; ARDBEG</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Wed 3 Jun, 20:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          The Deer's Head, 1-3 Lower Garfield St, Belfast BT1 1FP
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.localwineschool.com/belfast/a-taste-of-italy/" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">A Taste of Italy</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Fri 5 Jun, 19:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Bullitt Hotel, Belfast BT1 4QN
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.belfastcity.gov.uk/Events/Night-Market-Sailortown" class="event-card" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Night Market: Sailortown</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Fri 5 Jun, 17:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Barrow Square, Clarendon Dock, Belfast
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+    <a href="https://www.belfastcity.gov.uk/Events/Night-Market-Sailortown" class="event-card tint" target="_blank" rel="noopener">
+      <div class="event-main">
+        <p class="event-title">Night Market: Sailortown</p>
+        <div class="event-meta">
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Fri 5 Jun, 17:00
+        </span>
+        <span class="meta-chip">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          Barrow Square, Clarendon Dock
+        </span>
+        </div>
+      </div>
+      <div class="event-actions">
+        <span class="more-link">Details
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </span>
+      </div>
+    </a>
+  </div>
+</div>
+</main>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <p class="footer-brand">Wolf &<br>Seahorse</p>
+        <p class="footer-tagline">Curated weekly to help you plan your week ahead in minutes.</p>
+        <a href="https://www.wolfandseahorse.com" class="footer-btn"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>Subscribe free</a>
+      </div>
+      <div class="footer-stats">
+        <div class="stat-card"><p class="stat-num" style="font-size:48px;line-height:1">111</p><p class="stat-label">Events this week</p></div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 Wolf & Seahorse. Updated weekly.</p>
+      <div class="footer-links">
+        <a href="https://events.wolfandseahorse.co.uk/legal" target="_blank" rel="noopener">Privacy policy</a>
+        <a href="https://events.wolfandseahorse.co.uk/legal" target="_blank" rel="noopener">Terms &amp; conditions</a>
+        <a href="https://www.wolfandseahorse.com">wolfandseahorse.com</a>
+      </div>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
