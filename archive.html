@@ -280,7 +280,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:4
    scrim is deliberately heavier than this photo needs — it has to win over
    an unknown image, and make_templates checks that it does. */
 .spx{position:relative;border:1px solid var(--line);border-radius:20px;overflow:hidden;
-  background:var(--bg-2);margin-bottom:4px}
+  background:var(--bg-2);margin-top:clamp(28px,4vw,44px);margin-bottom:4px}
 /* the photo is absolutely positioned, so the scrim and words must be
    positioned too or the image paints straight over them */
 .spx-scrim,.spx-body{position:relative}
@@ -290,7 +290,13 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:4
   display:block;line-height:1.08;font-size:1.95rem}
 .spx-copy{margin-top:9px;color:var(--muted);font-size:.95rem;line-height:1.55;max-width:46ch}
 .spx-foot{margin-top:18px}
-.spx-cta{white-space:nowrap}
+/* The markup gives the CTA .btn but no size class, so it had no padding at all.
+   It is sized and filled here (the page's primary button: ink on ground) rather
+   than in the markup, so pages already published pick it up from the CSS alone. */
+.spx .spx-cta{white-space:nowrap;padding:13px 26px;font-size:.92rem;background:var(--ink);color:var(--bg);
+  border-color:transparent;backdrop-filter:none;-webkit-backdrop-filter:none}
+.spx .spx-cta:hover{background:#fff;border-color:transparent;transform:translateY(-1px);
+  box-shadow:0 10px 30px -10px rgba(246,242,237,.4)}
 .spx-over{min-height:260px;display:grid}
 .spx-over .spx-ph{grid-area:1/1;position:relative}
 .spx-over .spx-ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -302,14 +308,30 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:4
    by only ~0.2 on a white image, so the overlay lifts its text rather than
    darkening the scrim further and hiding the sponsor's picture. */
 .spx-over .spx-eyebrow,.spx-over .spx-copy{color:rgba(246,242,237,.82)}
-/* no photo, or none booked: the same block without the image */
-.spx-house{padding:26px 30px}
-.spx-house .spx-name{font-size:1.5rem}
-.spx-house:not(.spx-over){border-style:dashed;background:transparent}
+/* no photo, or none booked: a banner in the title's own colour, words left and
+   the button right. Every text colour here is measured against the real pixels
+   of the gradient on all five palettes (AA at 320px to 1920px). */
+.spx-house{padding:32px 36px}
+.spx-house .spx-body{display:grid;grid-template-columns:1fr auto;align-items:center;column-gap:36px}
+.spx-house .spx-body > *{grid-column:1}
+.spx-house .spx-foot{grid-column:2;grid-row:1/span 3;margin-top:0}
+.spx-house:not(.spx-over){border-color:color-mix(in srgb,var(--accent) 50%,transparent);
+  background:
+    radial-gradient(70% 170% at 100% 0%,color-mix(in srgb,var(--accent) 78%,transparent) 0%,transparent 64%),
+    linear-gradient(100deg,color-mix(in srgb,var(--accent) 30%,#000) 0%,color-mix(in srgb,var(--accent) 44%,#000) 100%)}
+.spx-house:not(.spx-over) .spx-eyebrow{color:var(--glow)}
+.spx-house:not(.spx-over) .spx-copy{color:rgba(246,242,237,.82)}
 @media(max-width:860px){
   .spx-over .spx-body{max-width:none;padding:24px 20px}
   .spx-name{font-size:1.5rem}
-  .spx-house{padding:20px 18px}
+  .spx-house{padding:24px 20px}
+  .spx-house .spx-body{display:block}
+  .spx-house .spx-foot{margin-top:18px}
+  /* stacked on a phone the words run under the glow, so it is pulled into the corner */
+  .spx-house:not(.spx-over){background:
+    radial-gradient(75% 85% at 100% 0%,color-mix(in srgb,var(--accent) 52%,transparent) 0%,transparent 70%),
+    linear-gradient(100deg,color-mix(in srgb,var(--accent) 30%,#000) 0%,color-mix(in srgb,var(--accent) 40%,#000) 100%)}
+  .spx-house:not(.spx-over) .spx-copy{color:rgba(246,242,237,.9)}
 }
 
 .more{display:flex;justify-content:center;margin-top:44px}
@@ -373,9 +395,22 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:4
   [data-r]{opacity:1!important;transform:none!important;filter:none!important}
   *{transition-duration:.01ms!important;animation-duration:.01ms!important}
 }
+
+/* sign-up (PG9): our own button; Beehiiv's form, and its cookies, load only on a tap */
+.su-hero .hero-cta{margin-top:40px}
+.su-fine{margin-top:14px;font-size:.86rem;line-height:1.5;color:rgba(246,242,237,.9);max-width:46ch}
+.su-fine a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+.su-panel{margin-top:26px;width:min(560px,100%)}
+.su-panel[hidden],.su-fine[hidden],.su-fallback[hidden]{display:none}
+.su-slot{min-height:64px}
+/* the page is "dark light"; a frame whose scheme differs is painted opaque white, so match the form's own (light) */
+.su-slot iframe{max-width:100%;color-scheme:light}
+.su-fallback{margin-top:12px;font-size:.9rem;color:var(--ink)}
+.su-fallback a{text-decoration:underline;text-underline-offset:3px}
+.su-foot{display:flex;flex-direction:column;align-items:flex-start;flex:1 1 420px;max-width:560px;min-width:min(420px,100%)}
+.su-foot .su-fine{color:var(--muted)}
 </style>
 <style>
-.day-s{margin:-4px 0 16px;color:var(--muted);font-size:.95rem;line-height:1.55;max-width:70ch}
 .about{padding-block:56px 28px;border-top:1px solid var(--line)}
 .about h2{font-family:var(--display);font-weight:500;font-size:1.4rem;margin-bottom:14px}
 .about p{color:var(--muted);max-width:70ch;line-height:1.65;margin-bottom:12px}
@@ -391,9 +426,9 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:4
 <nav class="nav">
   <a class="nav-mark" href="https://www.wolfandseahorse.co.uk">Wolf & Seahorse</a>
   <span class="nav-links"><a href="https://www.wolfandseahorse.co.uk">Newsletter</a><a href="https://www.wolfandseahorse.co.uk/archive">Archive</a></span>
-  <a class="btn btn-sm btn-fill" href="https://www.wolfandseahorse.co.uk">Subscribe</a>
+  <a class="btn btn-sm btn-fill" href="https://www.wolfandseahorse.co.uk" data-su-jump>Subscribe</a>
 </nav>
-<main id="main" class="shell idx"><h1>Past weeks in Belfast</h1><p>Every weekly edition of the Wolf &amp; Seahorse events guide, newest first. Each page lists what was on that week; for what is on now, start with this week.</p><ul><li><a href="https://events.wolfandseahorse.co.uk/"><b>This week</b> &middot; Tue 17 – Tue 24 Nov 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-11-17">Week starting Tuesday 17 November 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-11-10">Week starting Tuesday 10 November 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-11-03">Week starting Tuesday 3 November 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-10-27">Week starting Tuesday 27 October 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-10-20">Week starting Tuesday 20 October 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-10-06">Week starting Tuesday 6 October 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-09-29">Week starting Tuesday 29 September 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-09-22">Week starting Tuesday 22 September 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-09-15">Week starting Tuesday 15 September 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-09-08">Week starting Tuesday 8 September 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-09-01">Week starting Tuesday 1 September 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-08-25">Week starting Tuesday 25 August 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-08-18">Week starting Tuesday 18 August 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-08-04">Week starting Tuesday 4 August 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-07-27">Week starting Monday 27 July 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-07-13">Week starting Monday 13 July 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-07-06">Week starting Monday 6 July 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-06-22">Week starting Monday 22 June 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-06-15">Week starting Monday 15 June 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-06-08">Week starting Monday 8 June 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-06-01">Week starting Monday 1 June 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-05-25">Week starting Monday 25 May 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-05-18">Week starting Monday 18 May 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-05-11">Week starting Monday 11 May 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-05-04">Week starting Monday 4 May 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-04-27">Week starting Monday 27 April 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-03-30">Week starting Monday 30 March 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-03-23">Week starting Monday 23 March 2026</a></li></ul></main>
+<main id="main" class="shell idx"><h1>Past weeks in Belfast</h1><p>Every weekly edition of the Wolf &amp; Seahorse events guide, newest first. Each page lists what was on that week; for what is on now, start with this week.</p><ul><li><a href="https://events.wolfandseahorse.co.uk/"><b>This week</b> &middot; Tue 24 Nov – Tue 1 Dec 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-11-17">Week starting Tuesday 17 November 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-11-10">Week starting Tuesday 10 November 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-11-03">Week starting Tuesday 3 November 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-10-27">Week starting Tuesday 27 October 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-10-20">Week starting Tuesday 20 October 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-10-06">Week starting Tuesday 6 October 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-09-29">Week starting Tuesday 29 September 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-09-22">Week starting Tuesday 22 September 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-09-15">Week starting Tuesday 15 September 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-09-08">Week starting Tuesday 8 September 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-09-01">Week starting Tuesday 1 September 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-08-25">Week starting Tuesday 25 August 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-08-18">Week starting Tuesday 18 August 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-08-04">Week starting Tuesday 4 August 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-07-27">Week starting Monday 27 July 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-07-13">Week starting Monday 13 July 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-07-06">Week starting Monday 6 July 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-06-22">Week starting Monday 22 June 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-06-15">Week starting Monday 15 June 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-06-08">Week starting Monday 8 June 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-06-01">Week starting Monday 1 June 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-05-25">Week starting Monday 25 May 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-05-18">Week starting Monday 18 May 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-05-11">Week starting Monday 11 May 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-05-04">Week starting Monday 4 May 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-04-27">Week starting Monday 27 April 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-03-30">Week starting Monday 30 March 2026</a></li><li><a href="https://events.wolfandseahorse.co.uk/2026-03-23">Week starting Monday 23 March 2026</a></li></ul></main>
 <footer class="shell">
   <div class="foot">
     <div class="foot-top">
@@ -404,7 +439,14 @@ body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-weight:4
         <a href="https://events.wolfandseahorse.co.uk/legal" target="_blank" rel="noopener">Terms</a>
         <a href="https://www.wolfandseahorse.co.uk">wolfandseahorse.co.uk</a>
       </div>
-      <a class="btn btn-lg btn-fill" href="https://www.wolfandseahorse.co.uk">Get the weekly edit — free</a>
+      <div class="su su-foot" data-su data-form="2b4e6e9e-c2f8-4662-b993-e79b103d0892">
+        <a class="btn btn-lg btn-fill" href="https://www.wolfandseahorse.co.uk" data-su-open aria-controls="su-foot-panel" aria-expanded="false">Get the weekly edit &mdash; free</a>
+        <div class="su-panel" id="su-foot-panel" hidden>
+          <div class="su-slot"></div>
+          <p class="su-fallback" hidden>Form not showing? <a href="https://www.wolfandseahorse.co.uk">Sign up on our newsletter page</a>.</p>
+        </div>
+        <p class="su-fine">Tapping opens Beehiiv&rsquo;s secure sign-up form, which sets its own cookies. <a href="https://events.wolfandseahorse.co.uk/legal" target="_blank" rel="noopener">Privacy</a></p>
+      </div>
     </div>
     <p class="foot-legal"><span>© 2026 Wolf & Seahorse</span>
       <span>Times and details can change. Check with the venue before you go.</span></p>
